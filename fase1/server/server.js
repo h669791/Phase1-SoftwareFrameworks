@@ -18,3 +18,15 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+app.post('/api/register', (req, res) => {
+    // Handle user registration
+});
+
+app.post('/api/login', (req, res) => {
+    // Handle user login
+});
+
+app.get('/api/profile', (req, res) => {
+    // Retrieve user profile
+});
