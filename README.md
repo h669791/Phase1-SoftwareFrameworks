@@ -91,6 +91,9 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
 
 
 # A little reminder
+
+## Since you have a simple user structure in users.js, you can connect it with your Express server to handle login requests by calling findUser() and managing authentication flow via session or JWT token in Phase 2.**
+
 ## Account Component: Can manage user information, including logout and deleting the account.
 ## Channel Management: Group Admin can create/delete channels.
 ## Group Management: Group Admin can create/delete groups and manage users.
