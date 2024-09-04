@@ -17,18 +17,13 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    this.authService.login(this.username, this.password).subscribe(
-      (response) => {
-        if (response.success) {
-          localStorage.setItem('authToken', response.token);  // Store the token
-          this.router.navigate(['/dashboard']);  // Redirect on success
-        } else {
-          alert('Login failed: ' + response.message);
-        }
-      },
-      (error) => {
-        console.error('Login error', error);  // Log any errors
-      }
-    );
+    // Example logic for a login process
+    if (this.username === 'user' && this.password === 'pass') {
+      localStorage.setItem('user', JSON.stringify({ username: this.username }));
+      this.router.navigate(['/profile']);  // Redirect to profile after login
+    } else {
+      console.error('Invalid login');
+    }
   }
+  
 }  
