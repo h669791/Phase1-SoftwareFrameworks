@@ -1,5 +1,12 @@
 # Phase1-SoftwareFrameworks
 
+## How to Run
+1. Clone the repository from GitHub.
+2. Run `npm install` to install dependencies in both the frontend (`src`) and backend (`server`).
+3. Start the server: `npm run serve:express`.
+4. Start the frontend: `ng serve`.
+
+
 # 1. Git Repository Organization and Usage
 - I wanted to structure this repository so I could have a clear view between the frontent (the angular side) and backends(Node.js + express for phase 1) components.
 - Featured branches like configPhase1 was created to work on specific parts of the components, and will be added to the main when I have astable and error free code I'm confident to merge to main.
