@@ -25,7 +25,7 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
 - I made a group.js file so it would be easier and clearer for me to work with.
 - I also made one for channel.js so it could be easier to read and work with when there's so much data to work with. This will later come in handy when we involve MongoDB in to code.
 
-## Server-side(node
+## Server-side(node)
 - This is where I store and add user data in arrays for the mean time in phase 1.
 - Group and Channel are also stored in arrays. Channels belongs to groups, and users belong to both groups and channels. This will also include some data I can work with during the phase 1.
 
