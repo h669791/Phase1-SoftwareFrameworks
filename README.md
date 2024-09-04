@@ -105,6 +105,10 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
 
 ## Introduce Sockets
 
+
+
+---------
+
 # A little reminder
 
 ## Since you have a simple user structure in users.js, you can connect it with your Express server to handle login requests by calling findUser() and managing authentication flow via session or JWT token in Phase 2.**
