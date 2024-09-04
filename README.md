@@ -1,5 +1,12 @@
 # Phase1-SoftwareFrameworks
 
+## How to Run
+1. Clone the repository from GitHub.
+2. Run `npm install` to install dependencies in both the frontend (`src`) and backend (`server`).
+3. Start the server: `npm run serve:express`.
+4. Start the frontend: `ng serve`.
+
+
 # 1. Git Repository Organization and Usage
 - I wanted to structure this repository so I could have a clear view between the frontent (the angular side) and backends(Node.js + express for phase 1) components.
 - Featured branches like configPhase1 was created to work on specific parts of the components, and will be added to the main when I have astable and error free code I'm confident to merge to main.
@@ -87,10 +94,35 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
 1. The user creates or deletes group/channels from the "GroupManagementComponent" or "ChannelManagementComponent"
 2. Requests are sent to the server to update the group/channel data
 3. The server processes the request and sends back updated data, which is the reflected in the UI.
-  
 
+
+# Phase 2 Plans
+## What I should do in the next phase
+
+## Remove browser-based local storage and replace with MongoDB
+- The plan next is to integrate the MongoDB to authenticate users based on real data stored in the database
+- Try to replace localStorage with secure token storage, and implement middleware on the server to validate tokens each request.
+- This is plans for auth.service.ts
+
+## UserService
+- Replace the hardcoded data with CRUD operations through API calls to MongoDB
+- Implementing HTTP calls to create, update, and delete users from MongoDB
+- Fix so it can include role-based logic for actions like assigining users to group and channels
+- GET, POST, DELETE, to fetch, add, and remove the users with MongoDB integration.
+
+## Introduce Sockets
+- Since I didnt't implement sockets in phase 1, I need to introduce socket.io for real time updates (chat messages, group notifications)
+- WebSockets to broadcast changes to channels and groups to all connected users
+- Implement backend socket listeners that notify clients when there are updates
+- The key would be to connect to the backen and listen for updates using socket.io
+
+
+---------
 
 # A little reminder
+
+## Since you have a simple user structure in users.js, you can connect it with your Express server to handle login requests by calling findUser() and managing authentication flow via session or JWT token in Phase 2.**
+
 ## Account Component: Can manage user information, including logout and deleting the account.
 ## Channel Management: Group Admin can create/delete channels.
 ## Group Management: Group Admin can create/delete groups and manage users.
