@@ -1,5 +1,7 @@
 # Phase1-SoftwareFrameworks
 
+# Overview
+This is the Phase 1 submission for Jonas Roenningen.
 ## How to Run
 1. Clone the repository from GitHub.
 2. Run `npm install` to install dependencies in both the frontend (`src`) and backend (`server`).
