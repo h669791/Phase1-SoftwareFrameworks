@@ -104,7 +104,10 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
 - GET, POST, DELETE, to fetch, add, and remove the users with MongoDB integration.
 
 ## Introduce Sockets
-
+- Since I didnt't implement sockets in phase 1, I need to introduce socket.io for real time updates (chat messages, group notifications)
+- WebSockets to broadcast changes to channels and groups to all connected users
+- Implement backend socket listeners that notify clients when there are updates
+- The key would be to connect to the backen and listen for updates using socket.io
 
 
 ---------
