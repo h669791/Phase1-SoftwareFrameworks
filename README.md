@@ -87,8 +87,23 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
 1. The user creates or deletes group/channels from the "GroupManagementComponent" or "ChannelManagementComponent"
 2. Requests are sent to the server to update the group/channel data
 3. The server processes the request and sends back updated data, which is the reflected in the UI.
-  
 
+
+# Phase 2 Plans
+## What I should do in the next phase
+
+## Remove browser-based local storage and replace with MongoDB
+- The plan next is to integrate the MongoDB to authenticate users based on real data stored in the database
+- Try to replace localStorage with secure token storage, and implement middleware on the server to validate tokens each request.
+- This is plans for auth.service.ts
+
+## UserService
+- Replace the hardcoded data with CRUD operations through API calls to MongoDB
+- Implementing HTTP calls to create, update, and delete users from MongoDB
+- Fix so it can include role-based logic for actions like assigining users to group and channels
+- GET, POST, DELETE, to fetch, add, and remove the users with MongoDB integration.
+
+## Introduce Sockets
 
 # A little reminder
 
