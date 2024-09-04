@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module'; // Import the AppRoutingModule
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module'; // Ensure this is correctly imported
+import { AppComponent } from './app.component'; // Ensure this is correctly imported
+import { LoginComponent } from './login/login.component'; // Ensure all components are correctly imported
 import { AccountComponent } from './account/account.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,20 +12,20 @@ import { ChannelManagementComponent } from './channel-management/channel-managem
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, // Ensure AppComponent is declared here
     LoginComponent,
     AccountComponent,
     ProfileComponent,
     DashboardComponent,
     GroupManagementComponent,
-    ChannelManagementComponent
+    ChannelManagementComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule // Ensure AppRoutingModule is listed here
+    AppRoutingModule // Ensure AppRoutingModule is imported here
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // Ensure AppComponent is the bootstrap component
 })
 export class AppModule { }

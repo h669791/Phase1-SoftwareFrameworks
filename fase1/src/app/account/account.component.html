@@ -1,1 +1,24 @@
-<p>account works!</p>
+<h2>Create Account</h2>
+<form (ngSubmit)="onRegister()">
+  <div>
+    <label for="username">Username:</label>
+    <input id="username" [(ngModel)]="username" name="username" required />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="email" name="email" type="email" required />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" [(ngModel)]="password" name="password" type="password" required />
+  </div>
+  <div>
+    <label for="role">Role:</label>
+    <select id="role" [(ngModel)]="role" name="role" required>
+      <option value="user">User</option>
+      <option value="group-admin">Group Admin</option>
+      <option value="super-admin">Super Admin</option>
+    </select>
+  </div>
+  <button type="submit">Register</button>
+</form>

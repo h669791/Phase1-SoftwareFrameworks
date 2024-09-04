@@ -1,1 +1,16 @@
-<p>dashboard works!</p>
+<h2>Dashboard</h2>
+<div *ngIf="user">
+  <p>Welcome, {{ user.username }}!</p>
+  <div *ngIf="user.role === 'super-admin'">
+    <p>Super Admin Dashboard</p>
+    <a routerLink="/group-management">Manage Groups</a>
+  </div>
+  <div *ngIf="user.role === 'group-admin'">
+    <p>Group Admin Dashboard</p>
+    <a routerLink="/channel-management">Manage Channels</a>
+  </div>
+  <div *ngIf="user.role === 'user'">
+    <p>User Dashboard</p>
+    <a routerLink="/profile">View Profile</a>
+  </div>
+</div>

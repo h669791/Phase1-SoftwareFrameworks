@@ -1,1 +1,14 @@
-<p>group-management works!</p>
+<h2>Group Management</h2>
+<form (ngSubmit)="createGroup()">
+  <div>
+    <label for="groupName">Group Name:</label>
+    <input id="groupName" [(ngModel)]="groupName" name="groupName" required />
+  </div>
+  <button type="submit">Create Group</button>
+</form>
+<ul>
+  <li *ngFor="let group of groups">
+    {{ group.name }}
+    <button (click)="deleteGroup(group.id)">Delete</button>
+  </li>
+</ul>
