@@ -9,11 +9,10 @@ import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'group-management', component: GroupManagementComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'channel-management', component: ChannelManagementComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'register', component: AccountComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'group-management', component: GroupManagementComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'logout', component: LogoutComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];
