@@ -1,0 +1,15 @@
+<h2>Channel Management</h2>
+<form (ngSubmit)="createChannel()">
+  <div>
+    <label for="channelName">Channel Name:</label>
+    <input id="channelName" [(ngModel)]="channelName" name="channelName" required />
+  </div>
+  <button type="submit">Create Channel</button>
+</form>
+
+<ul>
+  <li *ngFor="let channel of channels; let i = index">
+    {{ channel.name }}
+    <button (click)="deleteChannel(i)">Delete</button>
+  </li>
+</ul>
