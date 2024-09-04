@@ -18,20 +18,17 @@ export class LoginComponent {
 
   onLogin() {
     this.authService.login(this.username, this.password).subscribe(
-      (response: any) => {
-        if (response.ok) {
-          // Store the token in localStorage
-          this.authService.saveToken(response.token);
-
-          // Navigate to the dashboard or another route after login
-          this.router.navigate(['/dashboard']);
+      (response) => {
+        if (response.success) {
+          localStorage.setItem('authToken', response.token);  // Store the token
+          this.router.navigate(['/dashboard']);  // Redirect on success
         } else {
-          alert('Invalid credentials');
+          alert('Login failed: ' + response.message);
         }
       },
-      error => {
-        console.error('Login error', error);
+      (error) => {
+        console.error('Login error', error);  // Log any errors
       }
     );
   }
-}
+}  
