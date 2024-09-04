@@ -17,10 +17,9 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    // Example logic for a login process
-    if (this.username === 'user' && this.password === 'pass') {
+    if (this.username === 'test' && this.password === 'password') {
       localStorage.setItem('user', JSON.stringify({ username: this.username }));
-      this.router.navigate(['/profile']);  // Redirect to profile after login
+      this.router.navigate(['/dashboard']);  // Redirect to dashboard after login
     } else {
       console.error('Invalid login');
     }

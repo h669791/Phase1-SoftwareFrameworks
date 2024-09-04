@@ -6,10 +6,13 @@ import { AuthGuard } from './auth.guard';  // Your Auth Guard
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },  // Protect profile
-  { path: '', redirectTo: '/login', pathMatch: 'full' },  // Default route
-  { path: '**', redirectTo: '/login' }  // Catch-all for invalid routes
+  { path: 'logout', component: LogoutComponent },
+  { path: 'group-management', component: GroupManagementComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
