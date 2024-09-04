@@ -90,6 +90,7 @@ As requested in the assignment, I've made a frontend(angular) and a backend(node
   
 
 
+# A little reminder
 ## Account Component: Can manage user information, including logout and deleting the account.
 ## Channel Management: Group Admin can create/delete channels.
 ## Group Management: Group Admin can create/delete groups and manage users.
