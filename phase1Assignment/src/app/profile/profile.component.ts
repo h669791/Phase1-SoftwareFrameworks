@@ -20,11 +20,11 @@ export class ProfileComponent {
   }
 
   updateProfile() {
-    this.currentUser.username = this.username;
-    this.currentUser.email = this.email;
-    this.updateUserData();
-    alert('Profile updated');
+    const updatedUser = { username: this.username, email: this.email };
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    console.log('Profile updated:', updatedUser);
   }
+  
 
   updateUserData() {
     const users = JSON.parse(localStorage.getItem('users') || '[]');

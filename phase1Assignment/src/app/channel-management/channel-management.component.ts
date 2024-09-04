@@ -21,19 +21,12 @@ export class ChannelManagementComponent {
   }
 
   createChannel() {
-    if (!this.channels.includes(this.channelName)) {
-      this.channels.push(this.channelName);
-      this.updateUserData();
-      alert('Channel created');
-    } else {
-      alert('Channel already exists');
-    }
+    this.channels.push(this.channelName);  // Add to channels array
+    this.channelName = '';  // Clear the input field
   }
 
   deleteChannel(channel: string) {
-    this.channels = this.channels.filter(c => c !== channel);
-    this.updateUserData();
-    alert('Channel deleted');
+    this.channels = this.channels.filter(c => c !== channel);  // Remove the channel
   }
 
   updateUserData() {

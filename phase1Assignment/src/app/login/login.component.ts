@@ -17,21 +17,12 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    this.authService.login(this.username, this.password).subscribe(
-      (response: any) => {
-        if (response.ok) {
-          // Store the token in localStorage
-          this.authService.saveToken(response.token);
-
-          // Navigate to the dashboard or another route after login
-          this.router.navigate(['/dashboard']);
-        } else {
-          alert('Invalid credentials');
-        }
-      },
-      error => {
-        console.error('Login error', error);
-      }
-    );
+    if (this.username === 'test' && this.password === 'password') {
+      localStorage.setItem('user', JSON.stringify({ username: this.username }));
+      this.router.navigate(['/dashboard']);  // Redirect to dashboard after login
+    } else {
+      console.error('Invalid login');
+    }
   }
-}
+  
+}  

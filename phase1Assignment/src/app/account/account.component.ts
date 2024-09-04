@@ -19,16 +19,14 @@ export class AccountComponent {
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('user') || '{}');
-  }
+  // Remove the extra closing brace
 
   createUser() {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    
-    // Ensure the username is unique
-    if (users.find((u: any) => u.username === this.username)) {
-      alert('Username already exists!');
-      return;
-    }
+    const user = { username: this.username, email: this.email };
+    localStorage.setItem('user', JSON.stringify(user));
+    // Optionally, call a backend API to save the user
+    this.router.navigate(['/dashboard']);  // Redirect to dashboard after account creation
+  }
 
     const newUser = {
       id: users.length + 1,
@@ -47,11 +45,9 @@ export class AccountComponent {
   }
 
   deleteAccount() {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const updatedUsers = users.filter((u: any) => u.username !== this.currentUser.username);
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
+    // Clear the current user from localStorage
     localStorage.removeItem('user');
-    alert('Account deleted');
-    this.router.navigate(['/login']);
+    this.currentUser = null;
+    this.router.navigate(['/login']);  // Redirect after account deletion
   }
 }

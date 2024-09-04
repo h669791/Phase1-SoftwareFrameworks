@@ -11,8 +11,13 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Function to handle login
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password });
+  login(username: string, password: string): boolean {
+    // Placeholder logic for login, you can replace with an API call
+    if (username === 'test' && password === 'password') {
+      localStorage.setItem('user', JSON.stringify({ username }));
+      return true;
+    }
+    return false;
   }
 
   // Store the token in localStorage when login is successful
@@ -20,13 +25,11 @@ export class AuthService {
     localStorage.setItem('authToken', token);
   }
 
-  // Check if the user is logged in by verifying if token exists
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('authToken');  // Check if authToken exists in localStorage
+    return !!localStorage.getItem('user');
   }
 
-  // Logout function to clear localStorage
-  logout(): void {
-    localStorage.removeItem('authToken');  // Remove the token to log out the user
+  logout() {
+    localStorage.removeItem('user');
   }
 }
