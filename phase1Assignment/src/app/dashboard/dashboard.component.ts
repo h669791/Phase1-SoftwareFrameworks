@@ -5,9 +5,18 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterModule],  // Import RouterModule
-  templateUrl: './dashboard.component.html'
+  imports: [CommonModule],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
+export class DashboardComponent {
+  groups: string[] = [];
+  channels: string[] = [];
+  currentUser: any;
 
-export class DashboardComponent {}
-
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+    this.groups = this.currentUser.groups || [];
+    this.channels = this.currentUser.channels || [];
+  }
+}
